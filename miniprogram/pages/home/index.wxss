@@ -1,0 +1,57 @@
+.swiper{
+  width: 100%;
+  height: 560rpx;
+}
+.swiper-item image{
+  width: 100%;
+  height: 100%;
+}
+
+.body-pannel{
+   position: relative;
+   margin-top: -60rpx;
+   background: #fff;
+   border-top-left-radius: 20rpx;
+   border-top-right-radius: 20rpx;
+   padding: 30rpx;
+   padding-bottom: 170rpx;
+}
+.address{
+  display: flex;
+}
+.address .text{
+  width: 600rpx;
+}
+.address image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.timepannel{
+  display: block;
+  margin-top: 20rpx;
+}
+
+.house-list{
+  margin-top: 30rpx;
+}
+.house-list .house-detail{
+  margin-bottom: 30rpx;
+}
+.house-list .house-detail .cover{
+  border-radius: 20rpx;
+  overflow: hidden;
+  width: 100%;
+}
+.house-list .house-detail .title{
+  position: relative;
+}
+.house-list .house-detail .title .price{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.house-list .house-detail .desc{
+  margin-top: 10rpx;
+}

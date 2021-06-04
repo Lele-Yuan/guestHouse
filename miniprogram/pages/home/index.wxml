@@ -1,0 +1,29 @@
+<view>
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{background}}" wx:key="*this">
+      <swiper-item class="swiper-item">
+        <image class="swiper-item" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="body-pannel">
+    <view class="address fontgray">
+      <view class="text font14">
+        <view>山东省青岛市崂山区王哥庄街道会场村79号</view>
+        <view>清婉居</view>
+      </view>
+      <image src="/images/icon/map.png"></image>
+    </view>
+    <component-timepannel class="timepannel"></component-timepannel>
+
+    <view class="house-list">
+      <view class="house-detail" wx:for="{{houseList}}">
+        <image class="cover" src="{{item.coaverImage}}" bindtap="toHouseDetail" data-detail="{{item}}"></image>
+        <view class="title font-title">清婉居<view class="price font14 fontactive">¥ 500</view></view>
+        <component-label-list></component-label-list>
+        <view class="desc font14 fontgray">房东寄语：在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！</view>
+      </view>
+    </view>
+  </view>
+</view>

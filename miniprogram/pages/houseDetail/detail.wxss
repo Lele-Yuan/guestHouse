@@ -1,0 +1,21 @@
+
+.house-detail-cover{
+  overflow: hidden;
+  width: 100%;
+}
+.house-detail{
+  padding: 30rpx;
+}
+.house-detail .title{
+  position: relative;
+}
+.house-detail .title .price{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.house-detail .desc{
+  margin-top: 10rpx;
+}

@@ -1,0 +1,33 @@
+.fontgray{
+  color: #666666;
+}
+.font10{
+  font-size: 20rpx;
+}
+.font12{
+  font-size: 24rpx;
+}
+.pannel{
+  height: 120rpx;
+  background: #FFFFCC;
+  border-radius: 20rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+}
+.pannel .time{
+  font-size: 28rpx;
+  width: 260rpx;
+}
+.pannel .time .text{
+  color: #666666;
+}
+.pannel .day{
+  display: flex;
+  align-items: center;
+}
+.pannel .day .icon{
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+}

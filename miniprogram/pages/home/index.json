@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-timepannel": "/components/timepannel/timepannel",
+    "component-label-list": "/components/labelList/labelList"
+  }
+}

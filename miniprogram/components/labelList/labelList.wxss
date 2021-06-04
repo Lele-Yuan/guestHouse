@@ -1,0 +1,12 @@
+.label-list{
+  overflow: hidden;
+}
+.label-list .item{
+  font-size: 24rpx;
+  background: #AFC7D1;
+  display: inline-block;
+  margin-right: 10rpx;
+  color: #ffffff;
+  padding: 4rpx 10rpx;
+  border-radius: 6rpx;
+}

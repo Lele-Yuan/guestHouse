@@ -1,0 +1,23 @@
+<view class="furniture-wrap">
+  <view class="furnitures" style="width: 2000rpx">
+    <view class="furniture-item">
+      <image src="./icon/beds.png"></image>
+      <view class="furniture-text">
+        <view class="text">双人床 1.5m*2m 1张</view>
+        <view class="text">双人床 1.8m*2m 1张</view>
+      </view>
+    </view>
+    <view class="furniture-item">
+      <image src="./icon/bed.png"></image>
+      <view class="furniture-text">
+        <view class="text">单人床 1.2m*2m 1张</view>
+      </view>
+    </view>
+    <view class="furniture-item">
+      <image src="./icon/bed.png"></image>
+      <view class="furniture-text">
+        <text>榻榻米 1.2m*2m 1张</text>
+      </view>
+    </view>
+  </view>
+</view>

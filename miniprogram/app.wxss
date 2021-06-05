@@ -19,7 +19,9 @@ button::after{
 }
 
 page {
-  background: #f6f6f6;
+  height: 100%;
+  overflow-y: auto;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -32,7 +34,7 @@ page {
   color: #639EAB;
 }
 .font-title{
-  font-size: 32rpx;
+  font-size: 34rpx;
 }
 .font10{
   font-size: 20rpx;
@@ -42,4 +44,7 @@ page {
 }
 .font14{
   font-size: 28rpx;
+}
+.mb-30{
+  margin-bottom: 30rpx;
 }

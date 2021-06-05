@@ -1,5 +1,7 @@
 <image class="house-detail-cover" src="{{coaverImage}}"></image>
 <view class="house-detail">
-  <view class="title font-title">清婉居<view class="price font14 fontactive">¥ 500</view></view>
-  <component-label-list></component-label-list>
+  <view class="title font-title">清婉居</view>
+  <component-label-list class="mb-30"></component-label-list>
+  <component-furniture-list class="mb-30"></component-furniture-list>
+  <component-timepannel class="timepannel"></component-timepannel>
 </view>

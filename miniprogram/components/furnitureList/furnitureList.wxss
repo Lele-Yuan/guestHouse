@@ -1,0 +1,23 @@
+.furniture-wrap{
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 20rpx;
+}
+.furnitures{
+  display: flex;
+}
+.furniture-item{
+  height: 88rpx;
+  border: 1rpx solid #eeeeee;
+  border-radius: 10rpx;
+  font-size: 20rpx;
+  margin-right: 20rpx;
+  width: 300rpx;
+  display: flex;
+  align-items: center;
+}
+.furniture-item image{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 10rpx;
+}

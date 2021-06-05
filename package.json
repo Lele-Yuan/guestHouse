@@ -1,0 +1,33 @@
+{
+  "name": "guesthouse",
+  "version": "1.0.0",
+  "description": "miniprogram for lily's guestHouse",
+  "main": "index.js",
+  "scripts": {
+    "commit": "git-cz",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lele-Yuan/guestHouse.git"
+  },
+  "keywords": [
+    "guestHouse",
+    "miniProject"
+  ],
+  "author": "Lele Yuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lele-Yuan/guestHouse/issues"
+  },
+  "homepage": "https://github.com/Lele-Yuan/guestHouse#readme",
+  "dependencies": {
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0"
+  }
+}

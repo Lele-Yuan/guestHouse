@@ -17,5 +17,15 @@
   margin: auto;
 }
 .house-detail .desc{
-  margin-top: 10rpx;
+  margin-top: 20rpx;
+}
+.house-detail .desc.hidden{
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.detail-expand{
+  margin-top: 10px;
 }

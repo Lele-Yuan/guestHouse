@@ -1,0 +1,36 @@
+.facility-services{
+  display: flex;
+  flex-wrap: wrap;
+}
+.facility-services-item{
+  width: 157.5rpx;
+  height: 130rpx;
+  padding: 10rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #e2e2e2;
+  box-sizing: border-box;
+  color: #999999;
+  font-size: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+  text-align: center;
+}
+.facility-services-item:nth-child(4n){
+  margin-right: 0;
+}
+.facility-services_icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.facility-services_text{
+  line-height: 24rpx;
+  width: 100%;
+}
+.facility-services_more{
+  font-size: 24rpx;
+  color: #88bac7;
+}

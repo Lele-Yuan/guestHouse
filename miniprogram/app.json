@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/index",
     "pages/my-center/index",
-    "pages/houseDetail/detail"
+    "pages/houseDetail/detail",
+    "pages/facilityServices/facilityServices"
   ],
   "window": {
     "backgroundColor": "#E8BA97",

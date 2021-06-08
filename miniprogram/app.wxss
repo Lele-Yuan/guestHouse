@@ -26,12 +26,16 @@ page {
   flex-direction: column;
   justify-content: flex-start;
 }
-
+.section-title{
+  font-size: 16px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 .fontgray{
-  color: #666666;
+  color: #999999;
 }
 .fontactive{
-  color: #639EAB;
+  color: #88bac7;
 }
 .font-title{
   font-size: 34rpx;

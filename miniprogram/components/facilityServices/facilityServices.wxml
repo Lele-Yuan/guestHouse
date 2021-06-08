@@ -1,0 +1,9 @@
+<view class="facility-services">
+  <view class="facility-services-item {{item.extraCharge ? 'extra-charge' : ''}}" wx:for="{{facilityServicesData}}" wx:key="index">
+    <image class="facility-services_icon" src="./icon/beds.png"></image>
+    <view class="facility-services_text">{{item.text}}</view>
+  </view>
+  <view class="facility-services-item" wx:if="{{showMoreButton}}" bindtap="handleTapMore">
+    <view class="facility-services_more">40+<text>\r\n</text>更多</view>
+  </view>
+</view>

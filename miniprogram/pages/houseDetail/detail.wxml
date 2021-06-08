@@ -1,7 +1,15 @@
-<image class="house-detail-cover" src="{{coaverImage}}"></image>
-<view class="house-detail">
-  <view class="title font-title">清婉居</view>
-  <component-label-list class="mb-30"></component-label-list>
-  <component-furniture-list class="mb-30"></component-furniture-list>
-  <component-timepannel class="timepannel"></component-timepannel>
+<view class="scroll-wrap">
+  <image class="house-detail-cover" src="{{coaverImage}}"></image>
+  <view class="house-detail">
+    <view class="title font-title">清婉居</view>
+    <component-label-list class="mb-30"></component-label-list>
+    <component-furniture-list class="mb-30"></component-furniture-list>
+    <view class="section-title">抵离日期</view>
+    <component-timepannel class="timepannel"></component-timepannel>
+    <view class="section-title">房东寄语</view>
+    <text class="desc font14 fontgray {{isExpanded ? '' : 'hidden'}}" >在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！<text>\r\n</text>在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！</text>
+    <text class="detail-expand font14 fontactive" bindtap="toogleDetailExpand">{{ isExpanded ? "收起" : "查看全部" }}</text>
+    <view class="section-title">设施服务</view>
+    <component-facility-services facilityServicesData="{{facilityServicesData}}" bind:tapMore="openFacilityServicesPage"></component-facility-services>
+  </view>
 </view>

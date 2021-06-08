@@ -2,7 +2,7 @@ Component({
   data: {
     "selected": 0,
     "color": "#666666",
-    "selectedColor": "#639EAB",
+    "selectedColor": "#88bac7",
     "list": [{
       "pagePath": "/pages/home/index",
       "text": "首页",

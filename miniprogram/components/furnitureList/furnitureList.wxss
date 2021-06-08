@@ -10,11 +10,12 @@
   height: 88rpx;
   border: 1rpx solid #eeeeee;
   border-radius: 10rpx;
-  font-size: 20rpx;
+  font-size: 24rpx;
   margin-right: 20rpx;
   width: 300rpx;
   display: flex;
   align-items: center;
+  color: #666666;
 }
 .furniture-item image{
   width: 40rpx;

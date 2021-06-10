@@ -1,0 +1,11 @@
+<view class="navbar" style="{{'height: ' + navHeight}}">
+  <view style="{{'height: ' + navTop}}"></view>
+  <view class='title-container' style="{{'height: ' + menuButtonHeight}}">
+    <view class='capsule' wx:if="{{ back || close || home }}">
+      <image class="icon" src='img/back.svg' bindtap='back' wx:if="{{back}}"></image>
+      <image class="icon" src='img/close.svg' bindtap='back' wx:if="{{close}}"></image>
+      <image class="icon" src='img/home.svg' bindtap='backHome' wx:if="{{home}}"></image>
+    </view>
+    <view class='title' wx:if="{{text}}">{{text}}</view>
+  </view>
+</view>

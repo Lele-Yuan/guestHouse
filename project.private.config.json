@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -15,6 +16,12 @@
           "name": "详情页面",
           "pathName": "pages/houseDetail/detail",
           "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "设施列表",
+          "pathName": "pages/facilityServices/facilityServices",
+          "query": "",
           "scene": null
         }
       ]

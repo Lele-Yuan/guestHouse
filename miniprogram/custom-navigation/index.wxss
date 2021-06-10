@@ -1,0 +1,41 @@
+.navbar {
+  width: 100vw;
+  position: fixed;
+  z-index: 4;
+  background: #E8BA97;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.capsule {
+  height: 100%;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.capsule .icon {
+  width: 32px;
+  height: 60%;
+  position: relative;
+}
+
+.capsule .icon:nth-child(2) {
+  border-left: 1px solid #777;  
+}
+
+.title {
+  color: white;
+  position: absolute;
+  left: 104px;
+  right: 104px;
+  font-size: 14px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

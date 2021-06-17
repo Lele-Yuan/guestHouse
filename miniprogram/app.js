@@ -32,5 +32,10 @@ App({
         console.log(err);
       }
     })
+  },
+  setGlobalDatePick(dateParam){
+    if(dateParam.length == 2){
+      this.globalData.datePicker = dateParam
+    }
   }
 })

@@ -3,7 +3,8 @@
     "pages/home/index",
     "pages/my-center/index",
     "pages/houseDetail/detail",
-    "pages/facilityServices/facilityServices"
+    "pages/facilityServices/facilityServices",
+    "pages/datePrice/datePrice"
   ],
   "window": {
     "backgroundColor": "#E8BA97",

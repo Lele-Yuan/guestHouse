@@ -23,6 +23,12 @@
           "pathName": "pages/facilityServices/facilityServices",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "选择日期",
+          "pathName": "pages/datePrice/datePrice",
+          "query": "",
+          "scene": null
         }
       ]
     }

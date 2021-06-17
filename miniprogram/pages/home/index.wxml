@@ -15,7 +15,7 @@
       </view>
       <image src="/images/icon/map.png"></image>
     </view>
-    <component-timepannel class="timepannel"></component-timepannel>
+    <component-timepannel class="timepannel" datePick="{{datePicker}}" bindtap="openDatePrice"></component-timepannel>
 
     <view class="house-list">
       <view class="house-detail" wx:for="{{houseList}}">

@@ -1,0 +1,3 @@
+<view>
+  <component-date-picker id="dateSelect" timeData="{{timeData}}" bind:datePicker="datePicker"></component-date-picker>
+</view>

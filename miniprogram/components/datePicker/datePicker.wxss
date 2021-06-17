@@ -1,0 +1,134 @@
+.border-b-f02222{
+  border-bottom:  1px solid #f02222
+}
+.month-img {
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: center;
+  background-size: 60%;
+}
+.day-box{
+  height:70rpx;
+}
+.width-p-100 {
+  width: 100%;
+}
+ 
+ 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+ 
+.align-c {
+  align-items: center;
+}
+.flex-p-20{
+  flex:  0 0 20%
+}
+.fix_font14{
+font-size:28rpx
+}
+.text_c {
+  text-align: center;
+}
+.fix_bgeee {
+  background-color: #eee;
+}
+ 
+.fix_bgfff {
+  background-color: #fff;
+}
+.fix_bgfcd2d3 {
+  background-color: #fcd2d3;
+}
+.width-p20 {
+  width: 20%;
+}
+.padding-10-0 {
+  padding: 20rpx 0;
+}
+ 
+.border-bottom-ec {
+  border-bottom: 1px solid #ececec;
+}
+ 
+/* 换行 */
+ 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+ 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+ 
+/* 右对齐 */
+ 
+.justify-e {
+  justify-content: flex-end;
+}
+.justify-s{
+  justify-self: flex-start
+}
+ 
+/* 左右居中 */
+ 
+.justify-c {
+  justify-content: center;
+}
+ 
+/* 两边 */
+ 
+.justify-b {
+  justify-content: space-between;
+}
+ 
+/* 上下居中 */
+ 
+.align-c {
+  align-items: center;
+}
+ 
+.align-c-stretch {
+  align-content: stretch;
+}
+ 
+ 
+.flex-g1 {
+  flex-grow: 1;
+}
+ 
+.flex-g2 {
+  flex-grow: 2;
+}
+ 
+/* 许单个项目有与其他项目不一样的对齐方式 */
+ 
+.align-end {
+  align-self: flex-end;
+}
+.width-p20 {
+  width: 20%;
+}
+.flex-p-20 {
+  flex: 0 0 20%;
+}
+.text_c {
+  text-align: center;
+}
+.fix_font14 {
+  font-size: 28rpx;
+}
+.padding-10-0 {
+  padding: 20rpx 0;
+}
+.width-p-100 {
+  width: 100%;
+}
+.fix_bgeee {
+  background-color: #eee;
+}
+.fix_clf02222 {
+  color: #f02222;
+}

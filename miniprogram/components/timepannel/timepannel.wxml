@@ -1,14 +1,14 @@
 <view class="pannel">
   <view class="time">
     <text class="time-label">入住日期</text>
-    <view class="date">05月24日 <text class="weekday">周三</text></view>
+    <view class="date">{{datePick[0].calendarDate}} <text class="weekday">周{{datePick[0].calendarWeekday}}</text></view>
   </view>
   <view class="time">
     <text class="time-label">离店日期</text>
-    <view class="date">05月24日 <text class="weekday1">周三</text></view>
+    <view class="date">{{datePick[1].calendarDate}} <text class="weekday">周{{datePick[1].calendarWeekday}}</text></view>
   </view>
   <view class="day">
-    <text>共1晚</text>
+    <text>共{{getDayNeight()}}晚</text>
     <image class="icon" src="/images/icon/right.png"></image>
   </view>
 </view>

@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    datePick: {
+      type: Array,
+      default: [{},{}]
+    }
   },
 
   /**
@@ -18,6 +21,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    getDayNeight() {
+      let count = 0
+      return count
+    }
   }
 })

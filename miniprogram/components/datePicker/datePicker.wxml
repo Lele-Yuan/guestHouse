@@ -1,0 +1,24 @@
+<!-- 日历选择 -->
+<view class="border-bottom-ec fix_bgfff">
+  <!-- 月份 -->
+  <scroll-view class="width-p-100" scroll-x>
+    <view class="flex-row width-p-100 flex-nowrap">
+      <view wx:for="{{monthArr}}" wx:key="index" bindtap="monthClick" data-index="{{index}}" class="width-p20 flex-p-20 text_c fix_font14 padding-10-0 {{item.isActive ?'fix_clf02222 border-b-f02222':''}}">
+       
+        <text wx:if="{{item.yearMonth !== newYear}}"> {{item.month}}月</text>
+         <text wx:if="{{item.yearMonth ===newYear}}"> {{newYearDate}}月</text>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 星期 -->
+  <view class="flex-row fix_bgeee flex-nowrap">
+    <view wx:for="{{weekArr}}" class="flex-g1 text_c fix_font12 padding-10-0 {{index ==0 || index ==weekArr.length-1?'fix_clf02222':''}} " wx:key="index">{{item}}</view>
+  </view>
+  <view class="flex-row flex-wrap month-img " wx:if="{{newMonth}}" style=" background-image:url('{{imgServer+newMonth}}.png');">
+    <view wx:for="{{dayArr}}" wx:key="index" data-index="{{index}}" bindtap="_dayClick" style="flex: 0 0 14.28%;" class="text_c day-box fix_font12 padding-10-0 {{item.money ?'fix_cl1e':'fix_cl888'}} {{item.isActive ?'fix_bgfcd2d3 border-r10':''}}">
+      <view wx:if="{{todayDate != item.date}}"> {{item.day}}</view>
+      <view wx:if="{{todayDate == item.date}}"> 今天</view>
+      <view class="fix_clff9b46 " wx:if="{{item.money}}"> ${{item.money}}</view>
+    </view>
+  </view>
+</view>

@@ -2,8 +2,8 @@
   <view class="furnitures" style="width: 2000rpx">
     <view class="furniture-item" wx:for="{{listData}}">
       <image src="./icon/{{item.icon}}.png"></image>
-      <view class="furniture-text" wx:for="{{item.list}}" wx:for-item="listItem">
-        <view class="text">{{listItem.name}} {{listItem.count}}{{listItem.unit}}</view>
+      <view class="furniture-text">
+        <view class="text" wx:for="{{item.list}}" wx:for-item="listItem">{{listItem.name}} {{listItem.count}}{{listItem.unit}}</view>
       </view>
     </view>
   </view>

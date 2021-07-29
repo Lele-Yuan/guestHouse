@@ -1,4 +1,5 @@
 // components/timepannel.js
+const global = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -7,6 +8,10 @@ Component({
     datePick: {
       type: Array,
       default: [{},{}]
+    },
+    dateCount: {
+      type: Number,
+      default: 1
     }
   },
 
@@ -21,9 +26,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    getDayNeight() {
-      let count = 0
-      return count
-    }
+    
   }
 })

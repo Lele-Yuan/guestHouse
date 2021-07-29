@@ -15,14 +15,14 @@
       </view>
       <image src="/images/icon/map.png"></image>
     </view>
-    <component-timepannel class="timepannel" datePick="{{datePicker}}" bindtap="openDatePrice"></component-timepannel>
+    <!-- <component-timepannel class="timepannel" datePick="{{datePicker}}" bindtap="openDatePrice"></component-timepannel> -->
 
     <view class="house-list">
       <view class="house-detail" wx:for="{{houseList}}">
-        <image class="cover" src="{{item.coaverImage}}" bindtap="toHouseDetail" data-detail="{{item}}"></image>
-        <view class="title font-title">清婉居<view class="price font14 fontactive">¥ 500</view></view>
+        <image class="cover" src="{{item.coverUrl}}" bindtap="toHouseDetail" data-detail="{{item}}"></image>
+        <view class="title font-title">{{item.name}}<view class="price font14 fontactive">¥ {{item.defaultPrice}}</view></view>
         <component-label-list></component-label-list>
-        <view class="desc font14 fontgray">房东寄语：在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！</view>
+        <text class="desc font14 fontgray">房东寄语：{{item.ownerSay}}</text>
       </view>
     </view>
   </view>

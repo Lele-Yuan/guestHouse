@@ -8,7 +8,7 @@
     <view class="date">{{datePick[1].calendarDate}} <text class="weekday">周{{datePick[1].calendarWeekday}}</text></view>
   </view>
   <view class="day">
-    <text>共{{getDayNeight()}}晚</text>
+    <text>共{{dateCount}}晚</text>
     <image class="icon" src="/images/icon/right.png"></image>
   </view>
 </view>

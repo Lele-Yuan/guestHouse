@@ -1,4 +1,8 @@
 //app.js
+import {getSystemBarInfo} from './utils/systemInfo'
+import {getCloudDB} from './utils/db'
+import {  } from './utils/utils'
+
 App({
   onLaunch: function () {
     if (!wx.cloud) {
@@ -9,33 +13,28 @@ App({
         //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
         //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
         //   如不填则使用默认环境（第一个创建的环境）
-        // env: 'my-env-id',
+        env: 'cloud1-0gyj9icmdb1409cc',
         traceUser: true,
       })
     }
 
     this.globalData = {}
+    
+    getCloudDB(this.globalData)
 
-    let menuButtonObject = wx.getMenuButtonBoundingClientRect();
-    wx.getSystemInfo({
-      success: res => {
-        let statusBarHeight = res.statusBarHeight,
-          navTop = menuButtonObject.top,//胶囊按钮与顶部的距离
-          menuButtonHeight = menuButtonObject.height,//胶囊按钮的高度
-          navHeight = statusBarHeight + menuButtonHeight + (menuButtonObject.top - statusBarHeight)*2;//导航高度
-        this.globalData.navHeight = navHeight;
-        this.globalData.menuButtonHeight = menuButtonHeight;
-        this.globalData.navTop = navTop;
-        this.globalData.windowHeight = res.windowHeight;
-      },
-      fail(err) {
-        console.log(err);
-      }
-    })
+    getSystemBarInfo(this.globalData)
+
+    this.setGlobalDatePick(wx.getStorageSync('dataParam'))
   },
   setGlobalDatePick(dateParam){
     if(dateParam.length == 2){
       this.globalData.datePicker = dateParam
+      let start = dateParam[0].calendarDate
+      let end = dateParam[1].calendarDate
+      let dateCount = (new Date(end + ' 00:00:00').getTime() - new Date(start + ' 00:00:00').getTime()) / (1000*60*60*24)
+      this.globalData.dateCount = dateCount
+
+      wx.setStorageSync('dataParam', dateParam)
     }
   }
 })

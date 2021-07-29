@@ -1,0 +1,33 @@
+<!--miniprogram/pages/checkOrder/index.wxml-->
+<view class="check-order">
+  <view class="check-detail">
+    <image src="{{houseDetail.coverUrl}}" alt=""></image>
+    <view class="check-info">
+      <view class="check-title font14 fontlight">{{houseDetail.name}}</view>
+      <component-label-list class="mb-30" labels="{{houseDetail.labels}}"></component-label-list>
+    </view>
+  </view>
+  <component-timepannel class="timepannel" datePick="{{datePicker}}" dateCount="{{dateCount}}" bindtap="openDatePrice"></component-timepannel>
+  <view class="user-info font14 fontlight">
+    <view class="input-section">
+      <view class="input-title">入住人数</view>
+      <input class="input" placeholder="成人14岁及以上" bindinput="bindCountInput"/>
+    </view>
+    <view class="input-section">
+      <view class="input-title">预定人姓名</view>
+      <input class="input" placeholder="真实姓名(必填)" bindinput="bindNameInput"/>
+    </view>
+    <view class="input-section">
+      <view class="input-title">联系电话</view>
+      <input type="number" class="input" maxlength="11" placeholder="请输入您的手机好吗(必填)" bindinput="bindPhoneInput"/>
+    </view>
+  </view>
+  <view class="check-tips font12">
+    <view>特别提醒</view>
+    <view class="fontlight">请详细阅读详情页的《入住须知》，核对订单信息确认无误后继续操作。</view>
+  </view>
+  <view class="check-bottom">
+    <view class="bottom-price">¥ 500 <view class="price-list font14 fontactive" bindtap="openPriceList">价格明细</view></view>
+    <view class="bottom-btn font14 fontwhite" bindtap="checkOrder">立即预订</view>
+  </view>
+</view>

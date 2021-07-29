@@ -1,12 +1,20 @@
 // miniprogram/pages/houseDetail/detail.js
-Page({
+import { getHouseDetail } from '../../service/houseService'
 
+const global = getApp()
+
+Page({
   /**
    * 页面的初始数据
    */
   data: {
     id: '',
-    coaverImage: 'cloud://cloud1-0gyj9icmdb1409cc.636c-cloud1-0gyj9icmdb1409cc-1306066289/banner/banner01.jpeg',
+    name: '',
+    coverUrl: 'cloud://cloud1-0gyj9icmdb1409cc.636c-cloud1-0gyj9icmdb1409cc-1306066289/banner/banner01.jpeg',
+    beds: [],
+    datePicker: global.globalData.datePicker,
+    dateCount: global.globalData.dateCount,
+    ownerSay: '',
     isExpanded: false,
     facilityServicesData: [
       { text: '提供一次性洗漱用品'},
@@ -17,6 +25,41 @@ Page({
       { text: '茶具'},
     ],
   },
+  async onLoad(option){
+    this.setData({
+      id: option._id
+    })
+    let detailData = await getHouseDetail(this.data.id)
+    this.setData({
+      name: detailData.name,
+      coverUrl: detailData.coverUrl,
+      labels: detailData.labels,
+      beds: detailData.beds,
+      ownerSay: detailData.ownerSay,
+    })
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.setData({
+      datePicker: global.globalData.datePicker,
+      dateCount: global.globalData.dateCount
+    })
+  },
+
+  openDatePrice(e){
+    wx.navigateTo({
+      url: `/pages/datePrice/datePrice`,
+    })
+  },
+
+  checkOrder(e){
+    wx.navigateTo({
+      url: `/pages/checkOrder/index?_id=${this.data.id}`,
+    })
+  },
+
   openFacilityServicesPage: function(e) {
     wx.navigateTo({
       url: '/pages/facilityServices/facilityServices',
@@ -30,25 +73,12 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log(options.id)
-  },
-
-  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
 
   /**
    * 生命周期函数--监听页面隐藏

@@ -1,3 +1,4 @@
+import { getToday, getMonthList, getMonthdays, placeHolder } from '../../utils/utils'
 Component({
   /**
    * 组件的属性列表
@@ -18,8 +19,8 @@ Component({
     dayArr: [], //当月天数
     weekArr: ['日', '一 ', '二', '三', '四', '五', '六'],
     nowMonth: null, //当前月
-    imgServer: 'ImgServer', // 背景图片路径
-    selectedDays: []
+    selectedDays: [],
+    isClicked: false
   },
  
   /**
@@ -31,36 +32,7 @@ Component({
      * 获取当前月后的 11个月的月份 
      */
     getMonth: function() {
-      let date, newMonth = 0,
-        getMonth, getYear, monthArr = [],
-        that = this;
-      date = new Date();
-      getYear = date.getFullYear();
-      getMonth = date.getMonth();
-      for (let i = 0; i < 12; i++) {
-        if (getMonth < 12) {
-          getMonth++;
-          let monthData = {
-            month: that.placeHolder(getMonth),
-            year: getYear,
-            yearMonth: getYear + '-' + that.placeHolder(getMonth),
-            isActive: false
-          }
-          monthArr.push(monthData)
-        } else {
-          newMonth++
-          let monthData = {
-            month: that.placeHolder(newMonth),
-            year: getYear + 1,
-            yearMonth: getYear + 1 + '-' + that.placeHolder(newMonth),
-            isActive: false
-          }
-          // console.log(monthData)
-          monthArr.push(monthData)
-        }
- 
-      };
-      monthArr[0].isActive = true
+      let monthArr = getMonthList()
  
       // console.log(monthArr)
       this.setData({
@@ -70,62 +42,27 @@ Component({
       // 计算当前月天数
       this.getday(monthArr[0].year, monthArr[0].month)
  
-      this.getToday();
+      let todayData = getToday();
+      this.setData({
+        todayDate: todayData.todayDate,
+        newYear: todayData.newYear,
+        newYearDate: todayData.newYearDate
+      })
     },
     /**
      *  获取 选中“月”天数
      */
     getday: function(year, month) {
-      let that = this;
-      month = parseInt(month, 10);
-      let day = new Date(year, month, 0);
-      let allDay = day.getDate();
-      let dayArr = [];
-      for (let i = 1; i < allDay + 1; i++) {
-        let date = year + '-' + that.placeHolder(month) + '-' + that.placeHolder(i)
-        let dayDatail = {
-          date: date, // 完整时间 ‘2019-08-05’
-          week: new Date(date).getDay(), //星期几
-          day: i, // 几号   
-          money: '', // 金额
-          isActive: false //是否选中
-        }
-        dayArr.push(dayDatail)
-      }
- 
-      /**
-       * 占位
-       * 功能：将“天”数对应到“星期”下
-       */
-      let forNum = dayArr[0].week - 0;
-      for (let t = 0; t < forNum; t++) {
-        let test = {
-          date: '',
-          week: '',
-          day: '',
-          money: ''
-        }
-        dayArr.unshift(test)
-      }
- 
+      let dayArr = getMonthdays(year, month)
+
       this.setData({
         dayArr: dayArr
       })
       // console.log(dayArr)
       this.mergeFn()
-    },
-    /**
-     * 时间补位  小于10加'0'
-     * 
-     * 7 ==> '07'
-     */
-    placeHolder: function(data) {
-      if (data < 10) {
-        data = '0' + data
-        return data
-      } else {
-        return data.toString()
-      }
+      let dataParam = wx.getStorageSync('dataParam')
+      this.setActived(dataParam[0])
+      this.setActived(dataParam[1])
     },
     /**
      * 
@@ -177,43 +114,56 @@ Component({
       let clickIndex, dayArr;
       clickIndex = e.currentTarget.dataset.index;
       dayArr = this.data.dayArr;
+      if(!this.data.isClicked){
+        wx.removeStorageSync('dataParam')
+        this.setData({
+          isClicked: true,
+          selectedDays: []
+        })
+      }
       // console.log(clickIndex)
+      this.clearActived(this.data.selectedDays)
       if (dayArr[clickIndex].money) { 
  
-        let param = this.data.selectedDays
         let selectedDay = {
           calendarDate: dayArr[clickIndex].date,
           calendarMoney: dayArr[clickIndex].money,
           calendarWeekday: this.data.weekArr[dayArr[clickIndex].day],
         }
-        if(param.length == 0){
-          param.push(selectedDay)
-        }else if(param.length == 1){
-          let baseDay = new Date(param[0].calendarDate).getTime()
-          let activeDay = new Date(selectedDay.calendarDate).getTime()
-          if(baseDay < activeDay) {
-            param.push(selectedDay)
-          }else if(baseDay == activeDay){
-            return
-          }else{
-            param = [selectedDay, param[0]]
-          }
-        }else{
-          param = [selectedDay]
-        }
 
-        this.setData({
-          selectedDays: param
-        })
-        // console.log(param)
-        this.clearActived(this.data.selectedDays)
- 
+        this.setActived(selectedDay)
+  
         /**
          * 向父组件传参
          */
         this.triggerEvent('datePicker', this.data.selectedDays)
       }
  
+    },
+
+    setActived(selectedDay){
+
+      let param = this.data.selectedDays
+      if(param.length == 0){
+        param.push(selectedDay)
+      }else if(param.length == 1){
+        let baseDay = new Date(param[0].calendarDate).getTime()
+        let activeDay = new Date(selectedDay.calendarDate).getTime()
+        if(baseDay < activeDay) {
+          param.push(selectedDay)
+        }else if(baseDay == activeDay){
+          return
+        }else{
+          param = [selectedDay, param[0]]
+        }
+      }else{
+        param = [selectedDay]
+      }
+
+      this.setData({
+        selectedDays: this.data.selectedDays
+      })
+      this.clearActived(this.data.selectedDays)
     },
 
     // 设置选中状态
@@ -235,28 +185,5 @@ Component({
         dayArr: dayArr
       })
     },
-
-    // 获取当前日期
-    getToday: function() {
-      /**
-       * 获取今天的日期，用来区分与其他日期显示的样式
-       */
-      let date = new Date()
-      let year = date.getFullYear();
-      let month = date.getMonth();
-      let day = date.getDate();
-      let todayDate = year + '-' + this.placeHolder(month + 1) + '-' + this.placeHolder(day);
-      /**
-       *  区分今年和新的一年
-       */
-      let newYear = year + 1 + '-01';
-      let newYearDate = (year + 1).toString().slice(2) +'年01'
-      this.setData({
-        todayDate: todayDate,
-        newYear: newYear,
-        newYearDate: newYearDate
-      })
-    }
-  },
- 
+  }
 })

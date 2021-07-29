@@ -1,9 +1,10 @@
 <view class="furniture-wrap">
-  <view class="furnitures" style="width: 2000rpx">
+  <view class="furnitures">
     <view class="furniture-item" wx:for="{{listData}}">
-      <image src="./icon/{{item.icon}}.png"></image>
+      <image src="./icon/bed.png"></image>
+      <view class="furniture-type">{{item.type}}</view>
       <view class="furniture-text">
-        <view class="text" wx:for="{{item.list}}" wx:for-item="listItem">{{listItem.name}} {{listItem.count}}{{listItem.unit}}</view>
+        <view class="text" wx:for="{{item.list}}" wx:for-item="listItem">{{listItem.desc}} {{listItem.count}}张</view>
       </view>
     </view>
   </view>

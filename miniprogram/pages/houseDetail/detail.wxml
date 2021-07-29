@@ -1,17 +1,27 @@
 <view class="scroll-wrap">
-  <image class="house-detail-cover" src="{{coaverImage}}"></image>
+  <image class="house-detail-cover" src="{{coverUrl}}"></image>
   <view class="house-detail">
-    <view class="title font-title">清婉居</view>
-    <component-label-list class="mb-30"></component-label-list>
-    <component-furniture-list class="mb-30"></component-furniture-list>
+    <view class="title font-title">{{name}}</view>
+    <component-label-list class="mb-30" labels="{{labels}}"></component-label-list>
+    <component-furniture-list class="mb-30" listData="{{beds}}"></component-furniture-list>
     <view class="section-title">抵离日期</view>
-    <component-timepannel class="timepannel"></component-timepannel>
+    <component-timepannel class="timepannel" datePick="{{datePicker}}" dateCount="{{dateCount}}" bindtap="openDatePrice"></component-timepannel>
     <view class="section-title">房东寄语</view>
-    <text class="desc font14 fontgray {{isExpanded ? '' : 'hidden'}}" >在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！<text>\r\n</text>在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！在阳台目光所及便是大海，水光山色，一览无余；欢迎来到崂山，尽情享受阳光、沙滩、大海的陪伴吧！</text>
+    <text class="desc font14 fontgray {{isExpanded ? '' : 'hidden'}}" >{{ownerSay}}</text>
     <view class="detail-expand font14 fontactive">
       <text bindtap="toogleDetailExpand">{{ isExpanded ? "收起" : "查看全部" }}</text>
     </view>
     <view class="section-title">设施服务</view>
     <component-facility-services facilityServicesData="{{facilityServicesData}}" bind:tapMore="openFacilityServicesPage"></component-facility-services>
+    <view class="section-title">入住须知</view>
+    <text class="font14 fontgray" >1. 办理入住时间为当如12点之后，提前抵达可在办理完入住手续后可现将行李寄存。
+    2. 年满14周岁的入住客人，需要携带本人身份证，办理实名登记和人脸识别。
+    3. 如需接机服务请在预定时选择接机服务。
+    4. 默认不包含餐食，如需餐食请在小程序首页另外预定或联系客服。
+    </text>
+  </view>
+  <view class="house-detail-bottom">
+    <view class="bottom-price fontactive">¥ 500</view>
+    <view class="bottom-btn font14 fontwhite" bindtap="checkOrder">立即预订</view>
   </view>
 </view>

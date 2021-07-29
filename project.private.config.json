@@ -15,7 +15,7 @@
         {
           "name": "详情页面",
           "pathName": "pages/houseDetail/detail",
-          "query": "id=1",
+          "query": "_id=cd045e7560ffbb4b0037f50055d5bd5b",
           "scene": null
         },
         {
@@ -28,6 +28,12 @@
           "name": "选择日期",
           "pathName": "pages/datePrice/datePrice",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "核实订单",
+          "pathName": "pages/checkOrder/index",
+          "query": "_id=cd045e7560ffbb4b0037f50055d5bd5b",
           "scene": null
         }
       ]

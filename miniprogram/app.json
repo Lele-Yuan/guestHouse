@@ -4,7 +4,10 @@
     "pages/my-center/index",
     "pages/houseDetail/detail",
     "pages/facilityServices/facilityServices",
-    "pages/datePrice/datePrice"
+    "pages/datePrice/datePrice",
+    "pages/checkOrder/index",
+    "pages/orderList/index",
+    "pages/orderDetail/index"
   ],
   "window": {
     "backgroundColor": "#E8BA97",

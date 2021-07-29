@@ -1,5 +1,5 @@
 // miniprogram/pages/home/index.js
-const global = getApp()
+import { getHouseList } from '../../service/houseService'
 
 Page({
 
@@ -19,20 +19,16 @@ Page({
       'cloud://cloud1-0gyj9icmdb1409cc.636c-cloud1-0gyj9icmdb1409cc-1306066289/banner/banner05.jpeg',
       'cloud://cloud1-0gyj9icmdb1409cc.636c-cloud1-0gyj9icmdb1409cc-1306066289/banner/banner06.jpeg',
     ],
-    houseList: [{
-      id: 1,
-      coaverImage: 'cloud://cloud1-0gyj9icmdb1409cc.636c-cloud1-0gyj9icmdb1409cc-1306066289/banner/banner04.jpeg',
-    },{
-      id: 2,
-      coaverImage: 'cloud://cloud1-0gyj9icmdb1409cc.636c-cloud1-0gyj9icmdb1409cc-1306066289/banner/banner02.jpeg',
-    }],
-    datePicker: global.globalData.datePicker,
+    houseList: [],
+  },
+  async onLoad(){
+    let houseList = await getHouseList()
+    this.setData({
+      houseList: houseList
+    })
   },
   onShow(){
-    this.setData({
-      datePicker: global.globalData.datePicker
-    })
-
+    // 设置自定义底部导航选中值
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
@@ -40,19 +36,16 @@ Page({
       })
     }
   },
-  openDatePrice(e){
-    //跳转传值
-    wx.navigateTo({
-      url: `/pages/datePrice/datePrice`,
-    })
-  },
   toHouseDetail(e){
     let houseDetailData = e.currentTarget.dataset.detail
     //跳转传值
     wx.navigateTo({
-      url: `/pages/houseDetail/detail?id=${houseDetailData.id}`,
+      url: `/pages/houseDetail/detail?_id=${houseDetailData._id}`,
     })
   },
+  /**
+   * 设置底部导航的选中状态
+   */
   pageLifetimes: {
     show() {
       if (typeof this.getTabBar === 'function' &&
